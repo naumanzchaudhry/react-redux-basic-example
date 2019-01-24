@@ -1,0 +1,10 @@
+.CreateAccountButton {
+    width: 200px;
+    margin-left:40%;
+    background: dodgerblue;
+    color: white;
+}
+
+.SignupForm {
+    margin-top: 5%;
+}
