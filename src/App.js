@@ -18,6 +18,22 @@ class App extends Component {
             <button type="button" onClick={this.props.onAdd}>Add 10</button>
             <button type="button" onClick={this.props.onSubtract}>Subtract 5</button>
         </section>
+
+        <hr />
+
+        <section className={classes.Section}>
+        
+          <button type="button" onClick={this.props.onSaveResult}>Store Result</button>
+
+          <ul>
+            {
+              this.props.storedResults.map(result => {
+                  return <li key={result.id} onClick={() => this.props.onDeleteResult(result.id)}>{result.value}</li>
+              })
+            }
+          </ul>
+        
+        </section>
       </div>
     )
   }
@@ -43,12 +59,15 @@ const mapStateToDispatch = dispatch => {
         }
       }
     ),
+    onSaveResult: () => dispatch({type: 'SAVE_RESULT'}),
+    onDeleteResult: (id) => dispatch({type: 'DELETE_RESULT', itemToDelete: id})
   }
 }
 
 const mapStateToProps = state => {
   return {
-    ctr: state.counter
+    ctr: state.counter,
+    storedResults: state.results
   }
 }
 
