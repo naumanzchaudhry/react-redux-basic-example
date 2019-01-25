@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import counterReducer from './store/reducers/counter';
@@ -16,17 +16,17 @@ const rootReducer = combineReducers({
     resRed: resultsReducer
 })
 
-const logger = state => {
+const logger = store => {
     return next => {
         return action => {
-            console.log("[Middleware] "+ action);
+            console.log("[Middleware] "+ JSON.stringify(action, null, 4));
             const result = next(action);
             return result;
         }
     }
 }
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

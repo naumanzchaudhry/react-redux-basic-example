@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import {connect} from 'react-redux';
-import * as actionTypes from './store/actions/actions';
+import * as actionCreators from './store/actions/actions';
 
 
 class App extends Component {
@@ -42,26 +42,12 @@ class App extends Component {
 
 const mapStateToDispatch = dispatch => {
   return {
-    onIncrement: () => dispatch({type: actionTypes.INCREMENT}),
-    onDecrement: () => dispatch({type: actionTypes.DECREMENT}),
-    onAdd: () => dispatch(
-      {
-        type: actionTypes.ADD,
-        payload: {
-          value: 10
-        }
-      }
-    ),
-    onSubtract: () => dispatch(
-      {
-        type: actionTypes.SUBTRACT,
-        payload: {
-          value: 5
-        }
-      }
-    ),
-    onSaveResult: (ctrValue) => dispatch({type: actionTypes.SAVE_RESULT, ctrValue: ctrValue}),
-    onDeleteResult: (id) => dispatch({type: actionTypes.DELETE_RESULT, itemToDelete: id})
+    onIncrement: () => dispatch(actionCreators.increment()),
+    onDecrement: () => dispatch(actionCreators.decrement()),
+    onAdd: () => dispatch(actionCreators.add({value: 10})),
+    onSubtract: () => dispatch(actionCreators.subtract({value: 5})),
+    onSaveResult: (ctrValue) => dispatch(actionCreators.saveResult(ctrValue)),
+    onDeleteResult: (id) => dispatch(actionCreators.deleteResult(id))
   }
 }
 
