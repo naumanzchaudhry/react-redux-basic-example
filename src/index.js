@@ -15,6 +15,17 @@ const rootReducer = combineReducers({
     ctrRed: counterReducer,
     resRed: resultsReducer
 })
+
+const logger = state => {
+    return next => {
+        return action => {
+            console.log("[Middleware] "+ action);
+            const result = next(action);
+            return result;
+        }
+    }
+}
+
 const store = createStore(rootReducer);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
