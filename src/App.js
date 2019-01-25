@@ -23,7 +23,7 @@ class App extends Component {
 
         <section className={classes.Section}>
         
-          <button type="button" onClick={this.props.onSaveResult}>Store Result</button>
+          <button type="button" onClick={() => this.props.onSaveResult(this.props.ctr)}>Store Result</button>
 
           <ul>
             {
@@ -59,15 +59,15 @@ const mapStateToDispatch = dispatch => {
         }
       }
     ),
-    onSaveResult: () => dispatch({type: 'SAVE_RESULT'}),
+    onSaveResult: (ctrValue) => dispatch({type: 'SAVE_RESULT', ctrValue: ctrValue}),
     onDeleteResult: (id) => dispatch({type: 'DELETE_RESULT', itemToDelete: id})
   }
 }
 
 const mapStateToProps = state => {
   return {
-    ctr: state.counter,
-    storedResults: state.results
+    ctr: state.ctrRed.counter,
+    storedResults: state.resRed.results
   }
 }
 

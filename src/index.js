@@ -4,13 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './store/reducer';
 
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+import counterReducer from './store/reducers/counter';
+import resultsReducer from './store/reducers/results';
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+    ctrRed: counterReducer,
+    resRed: resultsReducer
+})
+const store = createStore(rootReducer);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
