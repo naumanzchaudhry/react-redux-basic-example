@@ -1,5 +1,6 @@
 const initialState = {
-    counter: 0
+    counter: 0, 
+    n: 1
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,7 +12,8 @@ const reducer = (state = initialState, action) => {
           }
         case ('DECREMENT'):
           return {
-              counter: state.counter -1 
+              counter: state.counter -1 ,
+              n: state.n - 10
           }
         case ('ADD'):
           return {

@@ -10,6 +10,7 @@ class App extends Component {
       <div>
         <div className={classes.Header}>
             <h1>Counter: {this.props.ctr}</h1>
+            <h5>Hello : {this.props.salman}</h5>
         </div>
 
         <section className={classes.Section}>
@@ -48,8 +49,10 @@ const mapStateToDispatch = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    ctr: state.counter
+    ctr: state.counter,
+    salman: state.n
   }
 }
+
 
 export default connect(mapStateToProps, mapStateToDispatch)(App);
