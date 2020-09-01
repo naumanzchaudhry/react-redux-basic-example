@@ -1,5 +1,6 @@
 ### React Redux Basic Example
 
+111-22-1111
 nzafar@predictdata.io
 
 111-1111-111 This is sample SSN
