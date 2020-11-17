@@ -1,14 +1,11 @@
 ### React Redux Basic Example
-
-nzafar@predictdata.io
-
-111-1111-111 This is sample SSN
-naumanzafar@gmail.com is my email to test vco
-
-111-11-1111 & testacc@gmail.com
-
-Just another test email for test PR - nzafar@keplar.com
-
-Another gmail account - keplar@gmail.com
-
-SSN - 111-11-1111
+aaaa
+my account is 222-11-1111
+Here is the link to download confidential information https://www.dropbox.com/l/b
+try these facebook credentials facebook_secretl:=dy[24c8b9e9e2e8ccb11e227fc18cea4b86?
+my swift code: AbDcCA0B126
+my passport # 7751264999GBR0881161F724599178
+pgsql://user:password@host:port/dbname
+7751264999GBR0881161F724599178
+7751264999GBR0881161F724599178
+222-11-1111
